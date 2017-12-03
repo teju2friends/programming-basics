@@ -1,11 +1,22 @@
 package com.pulsethought.learn.algirithems;
 
-public class InsertionSort {
+public class InsertionSort implements ArraySorter {
 
-    public static void main(String args[]) {
-        int[] unsorted = new int[]{11, 25, 12, 22, 64};
-        printArray(unsorted, "Unsorted List");
-        selectionSort(unsorted);
-        printArray(unsorted, "Sorted List");
+    @Override
+    public void sort(int[] unsortedArray) {
+
+        if (unsortedArray.length < 1)
+            return;
+
+        for (int newElementIndex = 1; newElementIndex < unsortedArray.length; newElementIndex++) {
+            for (int i = newElementIndex - 1; i >= 0; i--) {
+                if (unsortedArray[i] < unsortedArray[newElementIndex]) {
+                    ArrayUtility.swap(unsortedArray, i + 1, newElementIndex);
+                    break;
+                }
+
+            }
+        }
+
     }
 }
