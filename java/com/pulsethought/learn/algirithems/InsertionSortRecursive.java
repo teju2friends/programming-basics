@@ -6,18 +6,24 @@ public class InsertionSortRecursive implements ArraySorter {
         insertionSort(unsortedArray, 1);
     }
 
-    private void insertionSort(int[] unsortedArray, int newElementIndex) {
+    private void insertionSort(int[] inputArray, int newElementIndex) {
 
-        if (newElementIndex >= unsortedArray.length)
+        if (newElementIndex >= inputArray.length)
             return;
 
         for (int i = newElementIndex - 1; i >= 0; i--) {
-            if (unsortedArray[i] < unsortedArray[newElementIndex]) {
-                ArrayUtility.swap(unsortedArray, i + 1, newElementIndex);
+
+            if (inputArray[i] < inputArray[newElementIndex]) {
+                ArrayUtility.insertAt(inputArray, i + 1, newElementIndex);
                 break;
             }
+
+            if (i == 0) {
+                ArrayUtility.insertAt(inputArray, i, newElementIndex);
+            }
+
         }
 
-        insertionSort(unsortedArray, newElementIndex + 1);
+        insertionSort(inputArray, newElementIndex + 1);
     }
 }

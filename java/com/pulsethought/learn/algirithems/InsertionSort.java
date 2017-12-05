@@ -9,13 +9,20 @@ public class InsertionSort implements ArraySorter {
             return;
 
         for (int newElementIndex = 1; newElementIndex < unsortedArray.length; newElementIndex++) {
+
             for (int i = newElementIndex - 1; i >= 0; i--) {
+
                 if (unsortedArray[i] < unsortedArray[newElementIndex]) {
-                    ArrayUtility.swap(unsortedArray, i + 1, newElementIndex);
+                    ArrayUtility.insertAt(unsortedArray, i + 1, newElementIndex);
                     break;
                 }
 
+                if (i == 0) {
+                    ArrayUtility.insertAt(unsortedArray, i, newElementIndex);
+                }
+
             }
+
         }
 
     }

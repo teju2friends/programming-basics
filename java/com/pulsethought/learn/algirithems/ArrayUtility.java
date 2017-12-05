@@ -12,4 +12,12 @@ public class ArrayUtility {
         for (int number : unsorted)
             System.out.println(number);
     }
+
+    public static void insertAt(int[] array, int position, int newElementIndex) {
+        int value = array[newElementIndex];
+        for (int i = newElementIndex; i > position; i--) {
+            array[i] = array[i - 1];
+        }
+        array[position] = value;
+    }
 }
