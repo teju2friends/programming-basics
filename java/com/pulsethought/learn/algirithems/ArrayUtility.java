@@ -9,7 +9,7 @@ public class ArrayUtility {
 
     static void printArray(int[] unsorted, String message) {
         System.out.println(message);
-        for (int number : unsorted)
+        for (int number: unsorted)
             System.out.println(number);
     }
 

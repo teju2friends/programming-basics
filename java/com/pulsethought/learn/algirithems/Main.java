@@ -16,7 +16,7 @@ public class Main {
         sorters.add(new InsertionSortRecursive());
         sorters.add(new HeapSort());
 
-        for (ArraySorter sorter : sorters) {
+        for (ArraySorter sorter: sorters) {
             int[] unsortedArray = Arrays.copyOf(unsorted, unsorted.length);
             sorter.sort(unsortedArray);
 
